@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <title>Cozy Winter Scene</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
     <div class="snow-layer"></div>
-
     <div class="main-container">
         <header>
             <div class="title-block">
@@ -27,11 +22,11 @@
                 <button id="toggleSnow" data-tooltip="Toggle falling snow">❄️ Toggle Snow</button>
                 <button id="toggleFire" class="primary" data-tooltip="Control the fireplace">🔥 Fire On/Off</button>
                 <button id="toggleCandles" data-tooltip="Light or dim candles">🕯️ Candles</button>
-                <button id="toggleTreeLights" class="accent-blue" data-tooltip="Control tree lights">🎄 Tree
-                    Lights</button>
+                <button id="toggleTreeLights" class="accent-blue" data-tooltip="Control tree lights">🎄 Tree Lights</button>
+                <button id="toggleTheme" class="accent-purple" data-tooltip="Switch color theme">🎨 Theme</button>
+                <button id="snowIntensity" class="accent-green" data-tooltip="Change snow intensity">🌨️ Snow+</button>
             </div>
         </header>
-
         <div class="content-grid">
             <div class="left-panel">
                 <div class="card window-card">
@@ -46,7 +41,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card countdown-card">
                     <h2>🎄 Christmas Countdown</h2>
                     <div class="countdown-display" id="countdown">
@@ -72,20 +66,37 @@
                 <div class="card music-card">
                     <h2>🎵 Holiday Tunes</h2>
                     <div class="now-playing">
-                        <div class="album-art">🎄</div>
+                        <div class="album-art" id="albumArt">🎄</div>
                         <div class="track-info">
-                            <div class="track-name">Winter Wonderland</div>
-                            <div class="track-artist">Holiday Classics</div>
+                            <div class="track-name" id="trackName">Winter Wonderland</div>
+                            <div class="track-artist" id="trackArtist">Holiday Classics</div>
                         </div>
                     </div>
                     <div class="music-controls">
-                        <button class="music-btn">⏮️</button>
+                        <button class="music-btn" id="prevBtn">⏮️</button>
                         <button class="music-btn primary" id="playBtn">▶️</button>
-                        <button class="music-btn">⏭️</button>
+                        <button class="music-btn" id="nextBtn">⏭️</button>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill"></div>
+                        <div class="progress-fill" id="progressFill"></div>
                     </div>
+                </div>
+
+                <div class="card greeting-card">
+                    <h2>✉️ Holiday Greeting</h2>
+                    <div class="greeting-content">
+                        <div class="greeting-text" id="greetingText">Wishing you a magical holiday season filled with joy and warmth!</div>
+                        <button class="greeting-btn" id="newGreeting">🎲 New Greeting</button>
+                    </div>
+                </div>
+
+                <div class="card wishlist-card">
+                    <h2>📝 Wishlist</h2>
+                    <div class="wishlist-input">
+                        <input type="text" id="wishInput" placeholder="Add a wish..." maxlength="50">
+                        <button id="addWish" class="add-wish-btn">+</button>
+                    </div>
+                    <ul class="wishlist" id="wishlist"></ul>
                 </div>
             </div>
 
@@ -294,6 +305,39 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card santa-card">
+                    <h2>🎅 Santa Tracker</h2>
+                    <div class="santa-display">
+                        <div class="santa-icon">🛷</div>
+                        <div class="santa-info">
+                            <div class="santa-location" id="santaLocation">North Pole Workshop</div>
+                            <div class="santa-status">Preparing gifts...</div>
+                        </div>
+                    </div>
+                    <div class="santa-progress">
+                        <div class="santa-progress-bar" id="santaProgress"></div>
+                    </div>
+                </div>
+
+                <div class="card tip-card">
+                    <h2>💡 Daily Winter Tip</h2>
+                    <div class="tip-content">
+                        <p id="dailyTip">Layer up! Wearing multiple thin layers keeps you warmer than one thick layer.</p>
+                        <button class="tip-btn" id="newTip">🔄 New Tip</button>
+                    </div>
+                </div>
+
+                <div class="card mood-card">
+                    <h2>😊 Holiday Mood</h2>
+                    <div class="mood-selector">
+                        <button class="mood-btn" data-mood="cozy">🥰 Cozy</button>
+                        <button class="mood-btn" data-mood="festive">🎉 Festive</button>
+                        <button class="mood-btn" data-mood="peaceful">😌 Peaceful</button>
+                        <button class="mood-btn" data-mood="excited">🤩 Excited</button>
+                    </div>
+                    <div class="mood-display" id="moodDisplay">How are you feeling today?</div>
+                </div>
             </div>
         </div>
 
@@ -310,9 +354,7 @@
         </footer>
     </div>
 
-    <script>
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
